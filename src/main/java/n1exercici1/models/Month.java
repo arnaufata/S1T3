@@ -1,4 +1,4 @@
-package n1exercici1;
+package n1exercici1.models;
 
 import java.util.Objects;
 
@@ -19,16 +19,6 @@ public class Month {
 	public String getName() {
 		return name;
 	}
-
-	/*
-	 * Si no sobreescribim el mètode 'equals()', Java utilitzarà la implementació
-	 * predeterminada d'Object, que només compara les referències d'objecte i
-	 * considerarà dos objectes diferents si són instàncies diferents, fins i tot si
-	 * tenen el mateix contingut.
-	 * 
-	 * HashSet reconeixerà que dos objectes Month són iguals si tenen el mateix nom,
-	 * i per tant no es permetran duplicats al HashSet basats en el nom del mes.
-	 */
 
 	@Override
 	public int hashCode() {

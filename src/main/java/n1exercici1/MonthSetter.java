@@ -1,16 +1,16 @@
 package n1exercici1;
 
+import n1exercici1.models.Month;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.Scanner;
 
-public class S103n1exercici1 {
+public class MonthSetter {
 
-	public static void main(String[] args) {
+	public static void runProgram() {
 
-		Scanner teclat = new Scanner(System.in);
 		ArrayList<Month> mesos = new ArrayList<Month>();
 
 		mesos.add(new Month("Gener"));
@@ -25,34 +25,34 @@ public class S103n1exercici1 {
 		mesos.add(new Month("Novembre"));
 		mesos.add(new Month("Desembre"));
 
+		System.out.print("Previ a inserció: ");
 		for (Month mes : mesos) {
 			System.out.print(mes.getName() + ", ");
 		}
 		System.out.println();
-
-		// Afegim el mes agost al ArrayList, i imprimim de nou demostrant que s'ha insertat al lloc dessitjat mantenint l'ordre correcte de la resta de mesos
 
 		mesos.add(7, new Month("Agost"));
 
+		System.out.print("Post a l'inserció: ");
 		for (Month mes : mesos) {
 			System.out.print(mes.getName() + ", ");
 		}
 		System.out.println();
-
-		// Convertim l'ArrayList en un HashSet i comprovem que no ens afegeix duplicats dels mesos ja existents
 
 		HashSet<Month> setMesos = new LinkedHashSet<>(mesos);
 
 		setMesos.add(new Month("Gener"));
 		setMesos.add(new Month("Maig"));
 
+		System.out.print("Hash set iterator: ");
 		Iterator<Month> it = setMesos.iterator();
 		while (it.hasNext()) {
 			Month mes = it.next();
 			System.out.print(mes.getName() + ", ");
 		}
 		System.out.println();
-		
+
+		System.out.print("Hash set for: ");
 		for (Month mes : setMesos) {
 			System.out.print(mes.getName() + ", ");
 		}

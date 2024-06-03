@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Restaurant implements Comparable<Restaurant> {
 
-	// ATRIBUTS
+	    // ATRIBUTS
 	
 		 private String nom;
 		 private int puntuacio;
@@ -46,6 +46,11 @@ public class Restaurant implements Comparable<Restaurant> {
 		}
 
 		@Override
-		public int compareTo(Restaurant o) {return Integer.compare(this.puntuacio, o.getPuntuacio());
+		public int compareTo(Restaurant o) {
+			int result = this.nom.compareTo(o.nom);
+			if (result == 0) {
+				result = Integer.compare(this.puntuacio, o.puntuacio);
+			}
+			return result;
 		}	
 } 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class S103n1exercici2 {
+public class Main {
 
 	public static void main(String[] args) {
 		

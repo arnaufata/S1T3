@@ -2,7 +2,7 @@ package n2exercici2;
 
 import java.util.*;
 
-public class S103n2exercici2 {
+public class Main {
 
 	public static void main(String[] args) {
 		
