@@ -12,11 +12,6 @@ public class CapitalQuiz {
     private int contadorPunts;
 
     public CapitalQuiz(HashMap<String, String> capitalCities){
-        this.capitalCities  = capitalCities;
-        this.countries      = new ArrayList<>(capitalCities.keySet());
-        this.countriesAsked = new HashSet<>();
-        this.random         = new Random();
-        this.teclat         = new Scanner(System.in);
         this.contadorPunts  = 0;
     }
 

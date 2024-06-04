@@ -12,9 +12,8 @@ public class FileHandler {
     public HashMap<String, String> llegirCountriesDelFitxer(String nom){
         HashMap<String, String> capitalCities = new HashMap<String, String>();
 
-        try {
-            File countries = new File("countries.txt");
-            Scanner lector = new Scanner(countries);
+        File countries = new File("countries.txt");
+        try (Scanner lector = new Scanner(countries)){
             while (lector.hasNextLine()) {
                 String data = lector.nextLine();
                 String[] divisio = data.split(" ");
@@ -25,7 +24,6 @@ public class FileHandler {
                     capitalCities.put(pais, capital);
                 }
             }
-            lector.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             e.printStackTrace();
@@ -34,10 +32,8 @@ public class FileHandler {
     }
 
     public void fitxerClasificacio(String nomFitxer, String nomUsuari, int puntuacio){
-        try {
-            FileWriter classificaio = new FileWriter(nomFitxer, true);
+        try (FileWriter classificaio = new FileWriter(nomFitxer, true);) {
             classificaio.write(nomUsuari + ": " + puntuacio + " punts.\n");
-            classificaio.close();
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
